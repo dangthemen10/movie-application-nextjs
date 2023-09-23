@@ -1,0 +1,23 @@
+name: check-pr
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Execute Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: "yarn"
+      - name: Install
+        run: yarn install
+      - name: lint
+        run: yarn run lint
+      - name: run build
+        run: yarn run build
