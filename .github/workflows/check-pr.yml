@@ -20,4 +20,9 @@ jobs:
       - name: lint
         run: yarn run lint
       - name: run build
-        run: yarn run build
+        run: |
+          if [[ $(git diff --name-only ${{ github.sha }} HEAD^) == *'./src/server'* ]]; then
+            yarn run build
+          else
+            echo "No changes in the ./src/server directory. Skipping build."
+          fi
