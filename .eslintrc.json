@@ -18,7 +18,7 @@
     "@typescript-eslint/no-explicit-any": "error",
     "react/react-in-jsx-scope": "off",
     "no-nested-ternary": "off",
-    "no-console": "warn",
+    "no-console": "off",
     "max-depth": "error",
     "eqeqeq": "error",
     "@next/next/no-html-link-for-pages": "error",
