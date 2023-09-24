@@ -6,7 +6,7 @@ const nextConfig = {
   //   appDir: true
   // },
   images: {
-    domains: ['image.tmdb.org', 'drive.google.com']
+    domains: ['image.tmdb.org', 'drive.google.com', 'img.freepik.com']
   }
 };
 

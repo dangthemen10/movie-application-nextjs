@@ -2,11 +2,11 @@
 
 import DividerMovieLine from '@/components/DividerMovieLine';
 import Footer from '@/components/Layout/Footer';
-import GlobalLoading from '@/components/GlobalLoading';
-import HomeBanner from '@/components/HomeBanner';
+import GlobalLoading from '@/components/Common/GlobalLoading';
+import HomeBanner from '@/components/Layout/HomeBanner';
 import Navbar from '@/components/Layout/Navbar';
 import Row from '@/components/Row';
-import ToastContainerBar from '@/components/ToastContainer';
+import ToastContainerBar from '@/components/Common/ToastContainer';
 import requests from '@/utils/requests';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -23,7 +23,6 @@ export default function Home() {
     documentaries: []
   });
   const [isLoading, setIsLoading] = useState(true);
-  console.log('🚀 ~ file: page.tsx:19 ~ Home ~ movie,:', movie);
 
   const fetchData = async () => {
     try {

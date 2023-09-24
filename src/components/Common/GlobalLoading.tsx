@@ -33,7 +33,7 @@ const GlobalLoading: React.FC<Props> = ({ isLoading }: Props) => {
           }}
         >
           <p className="font-bold text-5xl text-white animate-pulse">
-            Movie<span className="text-red-500">App</span>
+            Flick.<span className="text-red-500">Flair</span>
           </p>
         </Box>
       </Paper>

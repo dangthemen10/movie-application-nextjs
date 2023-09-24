@@ -22,6 +22,7 @@ const Footer: React.FC = () => {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
+            userId: user?.user.uid,
             name: user?.user?.name,
             email: user?.user?.email,
             userPhotoUrl: user?.user?.image,
@@ -122,10 +123,6 @@ const Footer: React.FC = () => {
           <span className="text-red-500">APP</span>
         </p>
         <p className="my-4 text-xs font-medium">{country}</p>
-      </div>
-
-      <div className="h-9 py-1 text-white text-center bg-[#333333]">
-        For Educational Purposes Only
       </div>
     </div>
   );

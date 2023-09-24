@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { BsPlayFill } from 'react-icons/bs';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import CircularRate from './CircularRate';
+import CircularRate from '@/components/Common/CircularRate';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -28,7 +28,6 @@ const SwiperSlidePage: React.FC<Props> = ({ movies, baseUrl }: Props) => {
       pagination={{
         clickable: true
       }}
-      // navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
       className="mySwiper h-[60vh] w-[100vh]"
     >
@@ -42,7 +41,6 @@ const SwiperSlidePage: React.FC<Props> = ({ movies, baseUrl }: Props) => {
               delay: 0.5,
               ease: [0, 0.71, 0.2, 1.01]
             }}
-            //onClick={handleChangePage}
             className="relative h-[60vh] w-[100vh] min-w-[180px] cursor-pointer transition-transform duration-200 ease-out  md:hover:scale-105"
           >
             {movie.backdrop_path || movie.poster_path ? (
@@ -51,7 +49,7 @@ const SwiperSlidePage: React.FC<Props> = ({ movies, baseUrl }: Props) => {
                   src={`${baseUrl}/${
                     movie?.backdrop_path || movie?.poster_path
                   }`}
-                  alt={movie.name}
+                  alt={movie.name || ''}
                   layout="fill"
                   className="rounded-md"
                 />

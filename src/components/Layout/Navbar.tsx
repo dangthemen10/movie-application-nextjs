@@ -43,7 +43,7 @@ function Navbar() {
     >
       <div className="flex items-center space-x-2 md:space-x-10">
         <p className="font-bold text-3xl text-white">
-          Movie<span className="text-red-500">App</span>
+          Flick.<span className="text-red-500">Flair</span>
         </p>
         <ul className="hidden md:space-x-4 md:flex cursor-pointer items-center">
           <li
@@ -99,7 +99,7 @@ function Navbar() {
             <button onClick={handleClick}>
               <Image
                 src={session.user.image!}
-                alt={session.user.name!}
+                alt={session.user.name! || ''}
                 className="w-8"
               />
             </button>

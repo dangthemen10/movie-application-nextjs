@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-import CircularRate from './CircularRate';
+import CircularRate from '@/components/Common/CircularRate';
 
 type Props = {
   movie: IMovie;
@@ -54,7 +54,7 @@ const SubMovieLine: React.FC<Props> = ({ movie }: Props) => {
             }`}
             layout="fill"
             className="rounded-sm object-cover md:rounded"
-            alt={movie?.title || movie?.name || movie?.original_name}
+            alt={movie?.title || movie?.name || movie?.original_name || ''}
             loading="lazy"
           />
           {isHover && (

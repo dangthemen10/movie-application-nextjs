@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import CircularRate from '@/components/CircularRate';
+import CircularRate from '@/components/Common/CircularRate';
 
 type Props = {
   movie: IMovie;
@@ -50,7 +50,7 @@ const MoviesLine: React.FC<Props> = ({ movie }: Props) => {
         >
           <Image
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-            alt={movie?.title || movie?.name || movie?.original_name}
+            alt={movie?.title || movie?.name || movie?.original_name || ''}
             width={500}
             height={500}
             className="rounded-md"

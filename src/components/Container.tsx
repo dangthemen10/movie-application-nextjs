@@ -1,5 +1,4 @@
 import { Box, Stack, Typography } from '@mui/material';
-import React from 'react';
 
 type Props = {
   header: string;
@@ -23,7 +22,6 @@ const Container: React.FC<Props> = ({ header, children, isTop }: Props) => {
               position: 'relative',
               paddingX: { xs: '20px', md: 0 },
               maxWidth: '1366px',
-              //marginX: "auto",
               width: '100%',
               '&::before': {
                 content: '""',

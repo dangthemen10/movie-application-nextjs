@@ -4,7 +4,7 @@ import { baseURL } from '@/utils/baseUrl';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { BsPlayFill } from 'react-icons/bs';
-import CircularRate from '@/components/CircularRate';
+import CircularRate from '@/components/Common/CircularRate';
 
 type Props = {
   netflixOriginals: IMovie[];
