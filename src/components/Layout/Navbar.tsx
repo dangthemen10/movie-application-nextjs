@@ -96,13 +96,19 @@ function Navbar() {
       <div className="font-light flex items-center space-x-4 text-sm mr-8">
         {session ? (
           <div>
-            <button onClick={handleClick}>
-              <Image
-                src={session.user.image!}
-                alt={session.user.name! || ''}
-                className="w-8"
-              />
-            </button>
+            <div className="flex items-center">
+              <span className="rounded-md">{session.user.name}</span>
+              <button onClick={handleClick} className="ml-2">
+                <Image
+                  src={session.user.image!}
+                  alt={session.user.name! || ''}
+                  className="w-9 rounded-3xl"
+                  width={200}
+                  height={200}
+                />
+              </button>
+            </div>
+
             <Menu
               id="basic-menu"
               anchorEl={anchorEl}
