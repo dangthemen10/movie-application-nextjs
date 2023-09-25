@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react';
 import { BiChevronLeftCircle, BiChevronRightCircle } from 'react-icons/bi';
-import Container from '@/components/Container';
+import Container from '@/components/Layout/Container';
 import MoviesLine from '@/components/MoviesLine';
 import SubMovieLine from '@/components/SubMovieLine';
 

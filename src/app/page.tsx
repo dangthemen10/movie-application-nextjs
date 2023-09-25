@@ -1,11 +1,11 @@
 'use client';
 
-import DividerMovieLine from '@/components/DividerMovieLine';
+import DividerMovieLine from '@/components/Slides/DividerMovieLine';
 import Footer from '@/components/Layout/Footer';
 import GlobalLoading from '@/components/Common/GlobalLoading';
-import HomeBanner from '@/components/Layout/HomeBanner';
+import HomeBanner from '@/components/Banner/HomeBanner';
 import Navbar from '@/components/Layout/Navbar';
-import Row from '@/components/Row';
+import Row from '@/components/Layout/Row';
 import ToastContainerBar from '@/components/Common/ToastContainer';
 import requests from '@/utils/requests';
 import { motion } from 'framer-motion';
