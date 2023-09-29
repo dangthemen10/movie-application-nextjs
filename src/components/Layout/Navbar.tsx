@@ -3,6 +3,7 @@
 import { Menu, MenuItem } from '@mui/material';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
@@ -42,54 +43,47 @@ function Navbar() {
       className={`header ${isScrolled && 'bg-[#141414]'} hover:bg-[#141414]`}
     >
       <div className="flex items-center space-x-2 md:space-x-10">
-        <p className="font-bold text-3xl text-white">
+        <Link href={'/'} className="font-bold text-3xl text-white">
           Flick.<span className="text-red-500">Flair</span>
-        </p>
+        </Link>
         <ul className="hidden md:space-x-4 md:flex cursor-pointer items-center">
-          <li
-            className={`navBarComponents ${
-              pathname === '/' && 'bg-red-500 px-2.5 py-2.5 rounded-md'
-            }`}
-            onClick={() => router.push('/')}
-          >
-            Home
-          </li>
-          <li
+          <Link
+            href={'/tv'}
             className={`navBarComponents ${
               pathname === '/tv' && 'bg-red-500 px-2.5 py-2.5 rounded-md'
             }`}
-            onClick={() => router.push('/tv')}
           >
             TV Shows
-          </li>
-          <li className="navBarComponents" onClick={() => router.push('/')}>
+          </Link>
+          <Link href={'/movie'} className="navBarComponents">
             Movies
-          </li>
-          <li
+          </Link>
+          <Link
+            href={'/people'}
             className={`navBarComponents ${
               pathname === '/people' && 'bg-red-500 px-2.5 py-2.5 rounded-md'
             }`}
-            onClick={() => router.push('/people')}
           >
             People
-          </li>
-          <li
+          </Link>
+          <Link
+            href={'/search'}
             className={`navBarComponents ${
               pathname === '/search' && 'bg-red-500 px-2.5 py-2.5 rounded-md'
             }`}
             onClick={() => router.push('/search')}
           >
             Search
-          </li>
+          </Link>
           {session && (
-            <li
+            <Link
+              href={'/profile'}
               className={`navBarComponents ${
                 pathname === '/profile' && 'bg-red-500 px-2.5 py-2.5 rounded-md'
               }`}
-              onClick={() => router.push('/profile')}
             >
               Profile
-            </li>
+            </Link>
           )}
         </ul>
       </div>
