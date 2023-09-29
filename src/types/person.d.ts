@@ -14,3 +14,14 @@ interface IPersonData {
   popularity: number;
   profile_path: string;
 }
+
+interface IPopularTyping {
+  adult: boolean;
+  gender: number;
+  id: number;
+  name: string;
+  popularity: number;
+  profile_path: string;
+  known_for: IDetails[];
+  known_for_department: string;
+}
