@@ -18,21 +18,13 @@ const PersonPage: React.FC = () => {
     try {
       setLoading(true);
 
-      const [popular] = await Promise.all([
-        fetch(
-          `${BASE_MOVIE_URL}/person/popular?api_key=${API_KEY}&language=en-US&page=${page}`
-        ).then((res) => res.json())
-      ]);
-
+      const popular = await fetch(
+        `${BASE_MOVIE_URL}/person/popular?api_key=${API_KEY}&language=en-US&page=${page}`
+      ).then((res) => res.json());
       setPeople((prev) => {
-        if (popular.results && popular.results.length > 0) {
-          return [...prev, ...popular?.results];
-        }
-        return [...prev];
+        return [...prev, ...popular?.results];
       });
-      setTimeout(() => {
-        setLoading(false);
-      }, 5000);
+      setLoading(false);
     } catch (error: any) {
       console.log('🚀 ~ file: page.tsx:20 ~ fetchPersonData ~ error:', error);
     }

@@ -1,33 +1,11 @@
 import { Paper, Toolbar, LinearProgress, Box } from '@mui/material';
 import Navbar from '@/components/Layout/Navbar';
-import { useEffect, useState } from 'react';
 
 type Props = {
   isLoading: boolean;
 };
 
 const GlobalLoading: React.FC<Props> = ({ isLoading }: Props) => {
-  const [progress, setProgress] = useState(0);
-  const [buffer, setBuffer] = useState(25);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (progress === 100) {
-        setProgress(90);
-      } else if (progress < 75) {
-        setProgress(70);
-        setBuffer(100);
-      } else if (progress < 50) {
-        setProgress(49);
-        setBuffer(75);
-      } else {
-        setProgress(25);
-        setBuffer(50);
-      }
-    }, 500);
-
-    return () => clearInterval(interval);
-  }, []);
   return (
     <>
       <Paper
@@ -45,11 +23,7 @@ const GlobalLoading: React.FC<Props> = ({ isLoading }: Props) => {
         <Navbar />
         <br />
         <Toolbar />
-        <LinearProgress
-          variant="buffer"
-          value={progress}
-          valueBuffer={buffer}
-        />
+        <LinearProgress />
         <Box
           sx={{
             position: 'absolute',

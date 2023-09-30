@@ -55,7 +55,7 @@ function Navbar() {
           >
             TV Shows
           </Link>
-          <Link href={'/movie'} className="navBarComponents">
+          <Link href={'/movies'} className="navBarComponents">
             Movies
           </Link>
           <Link

@@ -13,10 +13,12 @@ import { useEffect, useState } from 'react';
 
 const TvSession: React.FC = () => {
   const [movie, setMovie] = useState({
+    fetchNetflixOriginals: [],
     topRated: [],
     onTheAirTv: [],
     popularTv: [],
-    trendingTv: []
+    trendingTv: [],
+    airingToday: []
   });
   const [isLoading, setIsLoading] = useState(true);
 
@@ -24,19 +26,30 @@ const TvSession: React.FC = () => {
     try {
       setIsLoading(true);
 
-      const [topRated, onTheAirTv, popularTv, trendingTv] = await Promise.all([
+      const [
+        fetchNetflixOriginals,
+        topRated,
+        onTheAirTv,
+        popularTv,
+        trendingTv,
+        airingToday
+      ] = await Promise.all([
+        fetch(tvSeriesRequest.fetchNetflixOriginals).then((res) => res.json()),
         fetch(tvSeriesRequest.fetchTopRated).then((res) => res.json()),
         fetch(tvSeriesRequest.fetchOnTheAir).then((res) => res.json()),
         fetch(tvSeriesRequest.fetchPopular).then((res) => res.json()),
-        fetch(tvSeriesRequest.fetchTvTrending).then((res) => res.json())
+        fetch(tvSeriesRequest.fetchTvTrending).then((res) => res.json()),
+        fetch(tvSeriesRequest.fetchAiringToday).then((res) => res.json())
       ]);
 
       setMovie((prev) => ({
         ...prev,
+        fetchNetflixOriginals: fetchNetflixOriginals.results,
         topRated: topRated.results,
         onTheAirTv: onTheAirTv.results,
         popularTv: popularTv.results,
-        trendingTv: trendingTv.results
+        trendingTv: trendingTv.results,
+        airingToday: airingToday.results
       }));
 
       setTimeout(() => {
@@ -62,22 +75,18 @@ const TvSession: React.FC = () => {
       <GlobalLoading isLoading={isLoading} />
       {movie && (
         <main className="relative pl-4 pb-24 lg:space-y-24">
-          <HomeBanner netflixOriginals={movie.topRated} />
+          <HomeBanner netflixOriginals={movie.fetchNetflixOriginals} />
           <section className="md:space-y-24 pt-20">
+            <Row movies={movie.trendingTv} title="Trending Now" isMain={true} />
             <Row
-              movies={movie.trendingTv.slice(0, 10)}
-              title="Trending Now"
-              isMain={true}
-            />
-            <Row
-              movies={movie.topRated.slice(0, 10)}
-              title="Top Rated"
+              movies={movie.topRated}
+              title="Top Rated TV Shows"
               isMain={true}
             />
             <div className="pb-14">
               <Row
-                movies={movie.popularTv.slice(0, 10)}
-                title="Action Thrillers"
+                movies={movie.popularTv}
+                title="Popular TV Shows"
                 isMain={true}
               />
             </div>
@@ -86,18 +95,13 @@ const TvSession: React.FC = () => {
               horrorMovies={movie.topRated}
             />
             <Row
-              movies={movie.onTheAirTv.slice(0, 10)}
-              title="Comedies"
+              movies={movie.airingToday}
+              title="TV Shows Airing Today"
               isMain={true}
             />
             <Row
-              movies={movie.onTheAirTv.slice(10, movie.onTheAirTv.length)}
-              title="Scary Movies"
-              isMain={true}
-            />
-            <Row
-              movies={movie.popularTv.slice(0, movie.popularTv.length)}
-              title="Romance Movies"
+              movies={movie.onTheAirTv}
+              title="Currently Airing TV Shows"
               isMain={true}
             />
           </section>
