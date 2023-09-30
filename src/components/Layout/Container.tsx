@@ -34,7 +34,7 @@ const Container: React.FC<Props> = ({ header, children, isTop }: Props) => {
               }
             }}
           >
-            <Typography variant="h5" fontWeight="700" textTransform="uppercase">
+            <Typography variant="h5" fontWeight="700">
               {header}
             </Typography>
           </Box>

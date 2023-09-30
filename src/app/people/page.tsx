@@ -1,31 +1,38 @@
 'use client';
 
 import Footer from '@/components/Layout/Footer';
-import GlobalLoading from '@/components/Common/GlobalLoading';
 import Navbar from '@/components/Layout/Navbar';
 import PeoplePopular from '@/components/PeoplePopular';
 import ToastContainerBar from '@/components/Common/ToastContainer';
-import peopleRequests from '@/utils/personRequest';
 import { motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { LinearProgress } from '@mui/material';
+import { API_KEY, BASE_MOVIE_URL } from '@/utils/baseUrl';
 
 const PersonPage: React.FC = () => {
   const [people, setPeople] = useState<IPopularTyping[]>([]);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
 
   const fetchPersonData = async () => {
     try {
       setLoading(true);
 
       const [popular] = await Promise.all([
-        fetch(peopleRequests.fetchPopular).then((res) => res.json())
+        fetch(
+          `${BASE_MOVIE_URL}/person/popular?api_key=${API_KEY}&language=en-US&page=${page}`
+        ).then((res) => res.json())
       ]);
 
-      setPeople(popular.results);
-
+      setPeople((prev) => {
+        if (popular.results && popular.results.length > 0) {
+          return [...prev, ...popular?.results];
+        }
+        return [...prev];
+      });
       setTimeout(() => {
         setLoading(false);
-      }, 2000);
+      }, 5000);
     } catch (error: any) {
       console.log('🚀 ~ file: page.tsx:20 ~ fetchPersonData ~ error:', error);
     }
@@ -33,6 +40,24 @@ const PersonPage: React.FC = () => {
 
   useEffect(() => {
     fetchPersonData();
+  }, [page]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 200
+      ) {
+        setPage((prev) => {
+          return prev + 1;
+        });
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
@@ -44,12 +69,11 @@ const PersonPage: React.FC = () => {
     >
       <ToastContainerBar />
       <Navbar />
-      <GlobalLoading isLoading={loading} />
-      {!loading && (
-        <main className="pl-4 pb-24 lg:space-y-24">
-          <PeoplePopular people={people} />
-        </main>
-      )}
+
+      <main className="pl-4 pb-24 lg:space-y-24">
+        <PeoplePopular people={people} />
+      </main>
+      {loading && <LinearProgress />}
       <Footer />
     </motion.div>
   );

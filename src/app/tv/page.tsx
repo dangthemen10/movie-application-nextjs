@@ -7,7 +7,7 @@ import HomeBanner from '@/components/Banner/HomeBanner';
 import Navbar from '@/components/Layout/Navbar';
 import Row from '@/components/Layout/Row';
 import ToastContainerBar from '@/components/Common/ToastContainer';
-import tvRequests from '@/utils/tvSeasonRequest';
+import tvSeriesRequest from '@/utils/tvSeasonRequest';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
@@ -15,7 +15,8 @@ const TvSession: React.FC = () => {
   const [movie, setMovie] = useState({
     topRated: [],
     onTheAirTv: [],
-    popularTv: []
+    popularTv: [],
+    trendingTv: []
   });
   const [isLoading, setIsLoading] = useState(true);
 
@@ -23,17 +24,19 @@ const TvSession: React.FC = () => {
     try {
       setIsLoading(true);
 
-      const [topRated, onTheAirTv, popularTv] = await Promise.all([
-        fetch(tvRequests.fetchTopRated).then((res) => res.json()),
-        fetch(tvRequests.fetchOnTheAir).then((res) => res.json()),
-        fetch(tvRequests.fetchPopular).then((res) => res.json())
+      const [topRated, onTheAirTv, popularTv, trendingTv] = await Promise.all([
+        fetch(tvSeriesRequest.fetchTopRated).then((res) => res.json()),
+        fetch(tvSeriesRequest.fetchOnTheAir).then((res) => res.json()),
+        fetch(tvSeriesRequest.fetchPopular).then((res) => res.json()),
+        fetch(tvSeriesRequest.fetchTvTrending).then((res) => res.json())
       ]);
 
       setMovie((prev) => ({
         ...prev,
         topRated: topRated.results,
         onTheAirTv: onTheAirTv.results,
-        popularTv: popularTv.results
+        popularTv: popularTv.results,
+        trendingTv: trendingTv.results
       }));
 
       setTimeout(() => {
@@ -62,12 +65,12 @@ const TvSession: React.FC = () => {
           <HomeBanner netflixOriginals={movie.topRated} />
           <section className="md:space-y-24 pt-20">
             <Row
-              movies={movie.topRated.slice(0, 10)}
+              movies={movie.trendingTv.slice(0, 10)}
               title="Trending Now"
               isMain={true}
             />
             <Row
-              movies={movie.topRated.slice(10, movie.topRated.length)}
+              movies={movie.topRated.slice(0, 10)}
               title="Top Rated"
               isMain={true}
             />

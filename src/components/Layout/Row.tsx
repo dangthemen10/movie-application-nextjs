@@ -36,6 +36,9 @@ const Row: React.FC<Props> = ({ movies, title, isMain }: Props) => {
         className={`${isMain ? 'h-40' : 'h-52'} space-y-0.5 md:space-y-2 px-4`}
       >
         <Container header={title} isTop={false}>
+          <p className="absolute right-6 bg-gray-800 text-white text-sm cursor-pointer p-2 rounded-md hover:bg-red-500">
+            See more
+          </p>
           <div className="group relative md:-ml-2">
             <BiChevronLeftCircle
               className={`absolute top-0 bottom-0 left-2 z-40 m-auto h-9 w-9 cursor-pointer opacity-0 transition hover:scale-125 group-hover:opacity-100 ${
@@ -43,6 +46,7 @@ const Row: React.FC<Props> = ({ movies, title, isMain }: Props) => {
               }`}
               onClick={() => handleClick('left')}
             />
+
             <div
               ref={rowRef}
               className="flex items-center scrollbar-hide space-x-0.5 overflow-x-scroll md:space-x-3 md:p-2"
