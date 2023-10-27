@@ -1,6 +1,6 @@
-import { baseURL } from '@/utils/baseUrl';
 import Container from '@/components/Layout/Container';
 import ImageSwiper from '@/components/Slides/ImageSwiper';
+import { baseURL } from '@/utils/baseUrl';
 
 type Props = {
   movieImage: IMovieImage[];

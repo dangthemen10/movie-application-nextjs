@@ -1,4 +1,4 @@
-import { Paper, Toolbar, LinearProgress, Box } from '@mui/material';
+import { Box, LinearProgress, Paper, Toolbar } from '@mui/material';
 import Navbar from '@/components/Layout/Navbar';
 
 type Props = {

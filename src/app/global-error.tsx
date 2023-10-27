@@ -1,7 +1,7 @@
 'use client';
 
-import Head from 'next/head';
 import { MdSentimentVeryDissatisfied } from 'react-icons/md';
+import Head from 'next/head';
 
 export default function GlobalError({
   error,

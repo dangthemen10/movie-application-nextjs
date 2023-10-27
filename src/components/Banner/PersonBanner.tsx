@@ -1,11 +1,3 @@
-import tmdbConfigs from '@/config/tmdb.configs';
-import uiConfigs from '@/config/ui.configs';
-import { baseURL } from '@/utils/baseUrl';
-import { Box, Chip, Divider, Stack, Typography } from '@mui/material';
-import { motion } from 'framer-motion';
-import { Session } from 'next-auth';
-import { useSession } from 'next-auth/react';
-import Pusher from 'pusher-js';
 import { useEffect, useState } from 'react';
 import {
   AiFillHeart,
@@ -13,7 +5,15 @@ import {
   AiOutlineLoading3Quarters
 } from 'react-icons/ai';
 import { toast } from 'react-toastify';
+import { Session } from 'next-auth';
+import { useSession } from 'next-auth/react';
+import { Box, Chip, Divider, Stack, Typography } from '@mui/material';
+import { motion } from 'framer-motion';
+import Pusher from 'pusher-js';
 import CircularRate from '@/components/Common/CircularRate';
+import tmdbConfigs from '@/config/tmdb.configs';
+import uiConfigs from '@/config/ui.configs';
+import { baseURL } from '@/utils/baseUrl';
 
 const pusher = new Pusher('', {
   cluster: 'eu'

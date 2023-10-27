@@ -1,20 +1,20 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useSession } from 'next-auth/react';
+import { motion } from 'framer-motion';
 import DetailsBanner from '@/components/Banner/DetailsBanner';
+import GlobalLoading from '@/components/Common/GlobalLoading';
+import ToastContainerBar from '@/components/Common/ToastContainer';
 import EffectCardsSweeper from '@/components/EffectCards';
 import Footer from '@/components/Layout/Footer';
-import GlobalLoading from '@/components/Common/GlobalLoading';
-import MovieReview from '@/components/MovieReview';
 import Navbar from '@/components/Layout/Navbar';
 import Row from '@/components/Layout/Row';
+import MovieReview from '@/components/MovieReview';
 import Seasons from '@/components/Seasons';
-import ToastContainerBar from '@/components/Common/ToastContainer';
 import Trailer from '@/components/Trailer';
-import { motion } from 'framer-motion';
-import { useSession } from 'next-auth/react';
-import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { BASE_MOVIE_URL, API_KEY } from '@/utils/baseUrl';
+import { API_KEY, BASE_MOVIE_URL } from '@/utils/baseUrl';
 
 const DetailsPage: React.FC = () => {
   const pathname = usePathname();

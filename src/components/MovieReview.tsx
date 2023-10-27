@@ -1,7 +1,7 @@
-import { baseURL } from '@/utils/baseUrl';
 import Avatar from '@mui/material/Avatar';
 import moment from 'moment';
 import Container from '@/components/Layout/Container';
+import { baseURL } from '@/utils/baseUrl';
 
 type Props = {
   movieReview: IMovieReviewData[];

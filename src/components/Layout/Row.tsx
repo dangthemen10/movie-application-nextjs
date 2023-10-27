@@ -2,13 +2,13 @@
 
 import { useRef, useState } from 'react';
 import { BiChevronLeftCircle, BiChevronRightCircle } from 'react-icons/bi';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Container from '@/components/Layout/Container';
 import MoviesLine from '@/components/MoviesLine';
 import SubMovieLine from '@/components/SubMovieLine';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { toKebabCase } from '@/utils/convertString';
 import { MOVIE_TYPE } from '@/utils/constants';
+import { toKebabCase } from '@/utils/convertString';
 
 type Props = {
   movies: IMovie[];

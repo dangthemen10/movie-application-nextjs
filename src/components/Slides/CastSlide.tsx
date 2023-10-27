@@ -1,12 +1,12 @@
 'use client';
 
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
+import { Box, Typography } from '@mui/material';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import tmdbConfigs from '@/config/tmdb.configs';
 import uiConfigs from '@/config/ui.configs';
-import { Box, Typography } from '@mui/material';
-import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
-import { toast } from 'react-toastify';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 type Props = {
   casts: ICast[];

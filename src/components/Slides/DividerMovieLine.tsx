@@ -1,7 +1,7 @@
 'use client';
 
-import { baseURL } from '@/utils/baseUrl';
 import SwiperSlidePage from '@/components/Slides/SwiperSlidePage';
+import { baseURL } from '@/utils/baseUrl';
 
 type Props = {
   netflixOriginals: IMovie[];

@@ -1,7 +1,7 @@
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { Session } from 'next-auth';
 import { useSession } from 'next-auth/react';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
 
 const Footer: React.FC = () => {
   const { data: session } = useSession();

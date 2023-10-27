@@ -1,11 +1,11 @@
-import { baseURL } from '@/utils/baseUrl';
-import { motion } from 'framer-motion';
-import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import CircularRate from '@/components/Common/CircularRate';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
+import { motion } from 'framer-motion';
+import CircularRate from '@/components/Common/CircularRate';
+import { baseURL } from '@/utils/baseUrl';
 
 type Props = {
   person: IPopularTyping;

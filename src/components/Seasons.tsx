@@ -1,9 +1,9 @@
-import { baseURL } from '@/utils/baseUrl';
-import { motion } from 'framer-motion';
-import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
+import { motion } from 'framer-motion';
 import Container from '@/components/Layout/Container';
+import { baseURL } from '@/utils/baseUrl';
 
 type Props = {
   movieDetails: IDetails;

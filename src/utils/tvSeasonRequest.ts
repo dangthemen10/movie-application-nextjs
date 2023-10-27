@@ -1,4 +1,4 @@
-import { BASE_MOVIE_URL, API_KEY } from '@/utils/baseUrl';
+import { API_KEY, BASE_MOVIE_URL } from '@/utils/baseUrl';
 
 const tvSeriesRequests = {
   fetchNetflixOriginals: `${BASE_MOVIE_URL}/discover/tv?api_key=${API_KEY}&with_networks=213`,

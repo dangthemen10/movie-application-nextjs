@@ -1,6 +1,6 @@
+import { ClientSession, startSession } from 'mongoose';
 import { Persons } from '../model/persons';
 import { Users } from '../model/users';
-import { startSession, ClientSession } from 'mongoose';
 
 interface IFindPerson {
   userId: string;
