@@ -55,7 +55,12 @@ function Navbar() {
           >
             TV Shows
           </Link>
-          <Link href={'/movie'} className="navBarComponents">
+          <Link
+            href={'/movies'}
+            className={`navBarComponents ${
+              pathname === '/movies' && 'bg-red-500 px-2.5 py-2.5 rounded-md'
+            }`}
+          >
             Movies
           </Link>
           <Link

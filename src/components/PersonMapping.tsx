@@ -43,7 +43,7 @@ const PersonMapping: React.FC<Props> = ({ person }: Props) => {
         onMouseLeave={() => setIsHover(false)}
       >
         <Image
-          src={`${baseURL}${person.profile_path}`}
+          src={`${baseURL}${person?.profile_path}`}
           alt=""
           className="w-56 m-auto"
           width={150}
@@ -61,7 +61,7 @@ const PersonMapping: React.FC<Props> = ({ person }: Props) => {
                 ease: [0, 0.71, 0.2, 1.01]
               }}
             >
-              <CircularRate value={person.popularity / 100} isPoster={true} />
+              <CircularRate value={person?.popularity / 100} isPoster={true} />
 
               <p className="text-sm font-medium truncate">{person.name}</p>
             </motion.div>
