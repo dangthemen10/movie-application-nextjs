@@ -1,15 +1,15 @@
 'use client';
 
-import DividerMovieLine from '@/components/Slides/DividerMovieLine';
-import Footer from '@/components/Layout/Footer';
-import GlobalLoading from '@/components/Common/GlobalLoading';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import HomeBanner from '@/components/Banner/HomeBanner';
+import GlobalLoading from '@/components/Common/GlobalLoading';
+import ToastContainerBar from '@/components/Common/ToastContainer';
+import Footer from '@/components/Layout/Footer';
 import Navbar from '@/components/Layout/Navbar';
 import Row from '@/components/Layout/Row';
-import ToastContainerBar from '@/components/Common/ToastContainer';
+import DividerMovieLine from '@/components/Slides/DividerMovieLine';
 import tvSeriesRequest from '@/utils/tvSeasonRequest';
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
 
 const TvSession: React.FC = () => {
   const [movie, setMovie] = useState({

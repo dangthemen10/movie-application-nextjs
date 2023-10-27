@@ -1,21 +1,21 @@
 'use client';
 
-import Footer from '@/components/Layout/Footer';
-import GlobalLoading from '@/components/Common/GlobalLoading';
-import HomeBanner from '@/components/Banner/HomeBanner';
-import Navbar from '@/components/Layout/Navbar';
-import ToastContainerBar from '@/components/Common/ToastContainer';
-import tvSeriesRequest from '@/utils/tvSeasonRequest';
-import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { API_KEY, BASE_MOVIE_URL } from '@/utils/baseUrl';
-import List from '@/components/Layout/List';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { motion } from 'framer-motion';
+import HomeBanner from '@/components/Banner/HomeBanner';
+import GlobalLoading from '@/components/Common/GlobalLoading';
+import ToastContainerBar from '@/components/Common/ToastContainer';
+import Footer from '@/components/Layout/Footer';
+import List from '@/components/Layout/List';
+import Navbar from '@/components/Layout/Navbar';
+import { API_KEY, BASE_MOVIE_URL } from '@/utils/baseUrl';
 import { LIMIT_TOTAL_PAGE } from '@/utils/constants';
 import { convertToKebabCase } from '@/utils/convertString';
+import tvSeriesRequest from '@/utils/tvSeasonRequest';
 
 const TvSession: React.FC = () => {
   const pathname = usePathname();

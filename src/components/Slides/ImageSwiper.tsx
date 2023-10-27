@@ -1,14 +1,12 @@
-import { baseURL } from '@/utils/baseUrl';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-
-import 'swiper/css';
+import { baseURL } from '@/utils/baseUrl';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+// Import Swiper styles
+import 'swiper/css';
 
 type Props = {
   movieImage: IMovieImage[];

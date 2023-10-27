@@ -8,7 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "style": "eslint .",
+    "style:fix": "npm run style -- --fix"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -46,6 +48,7 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "husky": "^8.0.0",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3"

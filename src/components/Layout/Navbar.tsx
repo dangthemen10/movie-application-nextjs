@@ -1,11 +1,11 @@
 'use client';
 
-import { Menu, MenuItem } from '@mui/material';
-import { signIn, signOut, useSession } from 'next-auth/react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import { signIn, signOut, useSession } from 'next-auth/react';
+import { Menu, MenuItem } from '@mui/material';
 
 function Navbar() {
   const router = useRouter();

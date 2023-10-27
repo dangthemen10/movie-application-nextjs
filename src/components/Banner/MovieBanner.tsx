@@ -1,10 +1,10 @@
 'use client';
 
-import { baseURL } from '@/utils/baseUrl';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { BsPlayFill } from 'react-icons/bs';
+import Image from 'next/image';
 import CircularRate from '@/components/Common/CircularRate';
+import { baseURL } from '@/utils/baseUrl';
 
 type Props = {
   netflixOriginals: IMovie[];

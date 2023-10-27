@@ -1,15 +1,15 @@
 'use client';
 
-import DividerMovieLine from '@/components/Slides/DividerMovieLine';
-import Footer from '@/components/Layout/Footer';
-import GlobalLoading from '@/components/Common/GlobalLoading';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import MovieBanner from '@/components/Banner/MovieBanner';
+import GlobalLoading from '@/components/Common/GlobalLoading';
+import ToastContainerBar from '@/components/Common/ToastContainer';
+import Footer from '@/components/Layout/Footer';
 import Navbar from '@/components/Layout/Navbar';
 import Row from '@/components/Layout/Row';
-import ToastContainerBar from '@/components/Common/ToastContainer';
+import DividerMovieLine from '@/components/Slides/DividerMovieLine';
 import requests from '@/utils/requests';
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [movie, setMovie] = useState({

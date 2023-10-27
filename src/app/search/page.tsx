@@ -1,10 +1,10 @@
 'use client';
 
+import { motion } from 'framer-motion';
+import ToastContainerBar from '@/components/Common/ToastContainer';
 import Footer from '@/components/Layout/Footer';
 import Navbar from '@/components/Layout/Navbar';
 import SearchComponent from '@/components/SearchComponent';
-import ToastContainerBar from '@/components/Common/ToastContainer';
-import { motion } from 'framer-motion';
 
 const searchPage: React.FC = () => {
   return (

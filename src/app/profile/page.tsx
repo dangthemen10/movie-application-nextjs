@@ -1,12 +1,12 @@
 'use client';
 
-import Footer from '@/components/Layout/Footer';
-import GlobalLoading from '@/components/Common/GlobalLoading';
-import MainProfile from '@/components/MainProfile';
-import Navbar from '@/components/Layout/Navbar';
-import { motion } from 'framer-motion';
-import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
+import { useSession } from 'next-auth/react';
+import { motion } from 'framer-motion';
+import GlobalLoading from '@/components/Common/GlobalLoading';
+import Footer from '@/components/Layout/Footer';
+import Navbar from '@/components/Layout/Navbar';
+import MainProfile from '@/components/MainProfile';
 
 const ProfilePage: React.FC = () => {
   const { data: session } = useSession();

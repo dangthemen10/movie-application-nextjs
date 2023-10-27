@@ -1,13 +1,13 @@
-import { baseURL } from '@/utils/baseUrl';
-import { motion } from 'framer-motion';
-import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { FcSearch } from 'react-icons/fc';
 import { toast } from 'react-toastify';
-import CircularRate from '@/components/Common/CircularRate';
-import { BASE_MOVIE_URL, API_KEY } from '@/utils/baseUrl';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
+import { motion } from 'framer-motion';
+import CircularRate from '@/components/Common/CircularRate';
+import { baseURL } from '@/utils/baseUrl';
+import { API_KEY, BASE_MOVIE_URL } from '@/utils/baseUrl';
 
 const searchTopic = [
   'Want comedies from 1970 with at least 1000 votes and average rating of 7.5?',

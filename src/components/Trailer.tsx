@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
 import ReactPlayer from 'react-player';
-import { trailerUrl } from '@/utils/baseUrl';
+import { motion } from 'framer-motion';
 import Container from '@/components/Layout/Container';
+import { trailerUrl } from '@/utils/baseUrl';
 
 type Props = {
   movieTrailer: IMovieTrailer[];

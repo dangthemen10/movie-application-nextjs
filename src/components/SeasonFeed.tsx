@@ -1,6 +1,6 @@
-import { baseURL } from '@/utils/baseUrl';
-import CircularRate from '@/components/Common/CircularRate';
 import Image from 'next/image';
+import CircularRate from '@/components/Common/CircularRate';
+import { baseURL } from '@/utils/baseUrl';
 
 type Props = {
   seasons: IEpisode[];

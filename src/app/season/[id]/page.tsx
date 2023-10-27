@@ -1,11 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import Navbar from '@/components/Layout/Navbar';
-import Footer from '@/components/Layout/Footer';
 import { usePathname, useSearchParams } from 'next/navigation';
+import { motion } from 'framer-motion';
 import GlobalLoading from '@/components/Common/GlobalLoading';
+import Footer from '@/components/Layout/Footer';
+import Navbar from '@/components/Layout/Navbar';
 import SeasonFeed from '@/components/SeasonFeed';
 
 const SeasonPage: React.FC = () => {

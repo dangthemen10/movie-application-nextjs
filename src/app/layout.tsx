@@ -1,9 +1,8 @@
+import { Metadata } from 'next';
+import { getServerSession } from 'next-auth';
 import SessionProvider from '@/components/SessionProvider';
 import { authOption } from '@/pages/api/auth/[...nextauth]';
-import { getServerSession } from 'next-auth';
 import '../styles/globals.css';
-
-import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'FlickFlair',

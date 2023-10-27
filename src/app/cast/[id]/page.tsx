@@ -1,14 +1,14 @@
 'use client';
 
-import Footer from '@/components/Layout/Footer';
-import GlobalLoading from '@/components/Common/GlobalLoading';
-import Navbar from '@/components/Layout/Navbar';
-import PersonBanner from '@/components/Banner/PersonBanner';
-import Row from '@/components/Layout/Row';
-import ToastContainerBar from '@/components/Common/ToastContainer';
-import { motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { motion } from 'framer-motion';
+import PersonBanner from '@/components/Banner/PersonBanner';
+import GlobalLoading from '@/components/Common/GlobalLoading';
+import ToastContainerBar from '@/components/Common/ToastContainer';
+import Footer from '@/components/Layout/Footer';
+import Navbar from '@/components/Layout/Navbar';
+import Row from '@/components/Layout/Row';
 
 const CastPage: React.FC = () => {
   const pathname = usePathname();

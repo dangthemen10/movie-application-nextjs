@@ -1,12 +1,12 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+import { LinearProgress } from '@mui/material';
+import { motion } from 'framer-motion';
+import ToastContainerBar from '@/components/Common/ToastContainer';
 import Footer from '@/components/Layout/Footer';
 import Navbar from '@/components/Layout/Navbar';
 import PeoplePopular from '@/components/PeoplePopular';
-import ToastContainerBar from '@/components/Common/ToastContainer';
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { LinearProgress } from '@mui/material';
 import { API_KEY, BASE_MOVIE_URL } from '@/utils/baseUrl';
 
 const PersonPage: React.FC = () => {

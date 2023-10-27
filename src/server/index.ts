@@ -1,9 +1,9 @@
+import { serve, Server } from 'bun';
 import figlet from 'figlet';
-import { Server, serve } from 'bun';
-import { usersController } from './controllers/users';
-import { personsController } from './controllers/persons';
-import { moviesController } from './controllers/movies';
 import connectMongo from './config/database';
+import { moviesController } from './controllers/movies';
+import { personsController } from './controllers/persons';
+import { usersController } from './controllers/users';
 
 // Connect to mongodb
 connectMongo();

@@ -35,4 +35,4 @@ const convertToKebabCase = (kebabCaseStr: string): string => {
   return kebabCaseResult;
 };
 
-export { toKebabCase, convertToKebabCase };
+export { convertToKebabCase, toKebabCase };

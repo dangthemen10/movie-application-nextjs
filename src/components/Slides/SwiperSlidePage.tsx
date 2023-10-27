@@ -1,15 +1,14 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { BsPlayFill } from 'react-icons/bs';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import CircularRate from '@/components/Common/CircularRate';
-
-import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css';
 
 type Props = {
   movies: IMovie[];

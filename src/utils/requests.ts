@@ -1,4 +1,4 @@
-import { BASE_MOVIE_URL, API_KEY } from '@/utils/baseUrl';
+import { API_KEY, BASE_MOVIE_URL } from '@/utils/baseUrl';
 
 const requests = {
   fetchTrending: `${BASE_MOVIE_URL}/trending/all/week?api_key=${API_KEY}&language=en-US`,
