@@ -71,10 +71,7 @@ const TvSession: React.FC = () => {
         `${BASE_MOVIE_URL}/${pathName}?api_key=${API_KEY}&language=en-US&page=${pagination.currentPage}`
       ).then((res) => res.json());
 
-      setMovies((prev: any) => {
-        return [...prev, ...data?.results];
-      });
-
+      setMovies(data?.results);
       setPagination((prev) => ({
         ...prev,
         totalPage:
@@ -86,6 +83,11 @@ const TvSession: React.FC = () => {
       setTimeout(() => {
         setIsLoading(false);
       }, 2000);
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     } catch (error) {
       console.log('🚀 ~ file: page.tsx:474 ~ fetchData ~ error:', error);
     }
