@@ -84,8 +84,6 @@ export default function Home() {
     fetchData();
   }, []);
 
-  console.log('fetchNetflixOriginals', movie.netflixOriginals);
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
